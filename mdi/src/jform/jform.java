@@ -262,15 +262,28 @@ public class jform extends javax.swing.JInternalFrame {
         String NAMA = Nama.getText();
         String QUANTITY = Quantity.getText();
         String HARGA = Harga.getText();
-        String CATEGORY = Category.getText();
-        String CATITEM = categ.getSelectedItem() + "";
-        String UNIT = Unit.getText();
-        String SPAREPART = Sparepart.getText();
-        String LOKAS = Lokas.getText();
-        String LOK = lok.getSelectedItem() + "";
+        
+        String Jen="";
+        if (Unit.isSelected()){
+             Jen = Unit.getText();
+        }else{
+             Jen = Sparepart.getText();
+        }
+        String Jon="";
+        if (cat1.isSelected()){
+             Jon = Category.getText();
+        }if (cat2.isSelected()){
+             Jon = categ.getSelectedItem() + "";
+        }
+        String Jan="";
+        if (int1.isSelected()){
+             Jan = Lokas.getText();
+        }if (int2.isSelected()){
+             Jan = lok.getSelectedItem() + "";
+        }        
 
 
-        JOptionPane.showMessageDialog(this, "HASIL\nIDItem: "+ID+"\nNama: "+NAMA+"\nKate..: "+CATITEM+CATEGORY+"\nQuantity: "+QUANTITY+"\nHarga: "+HARGA+"\nType: "+UNIT+SPAREPART+"\nLokasi: "+LOKAS+LOK);
+        JOptionPane.showMessageDialog(this,"HASIL\nIDItem: "+ID+"\nNama: "+NAMA+"\nKate..: "+Jon+"\nQuantity: "+QUANTITY+"\nHarga: "+HARGA+"\nType: "+Jen+"\nLokasi: "+Jan);
     }//GEN-LAST:event_SUBMITActionPerformed
 
     private void cat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cat1ActionPerformed
